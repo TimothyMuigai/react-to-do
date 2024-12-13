@@ -1,5 +1,5 @@
-import React, { useState,useMemo } from 'react'
-import Body from './body';
+import { useState,useMemo } from 'react'
+import Body from './Body';
 
 function Functions() {
   const [userData, setuserData] = useState([]);
@@ -7,6 +7,7 @@ function Functions() {
   const [filter, setFilter] =useState('no-filter')
 
   const showInput=()=>{
+    if (inputData.trim() === '') return;
     const newData = {newInput:inputData, isChecked: false};
     setuserData(u=>[...u,newData]);
     setinputData('');
@@ -48,15 +49,15 @@ function Functions() {
 
   return (
     <Body
-      userInput = {inputData}
-      displayData = {showInput}
-      deleteTask = {delTask}
-      markDone = {handleCheckboxChange}
+      inputData = {inputData}
+      showInput = {showInput}
+      delTask = {delTask}
+      handleCheckboxChange = {handleCheckboxChange}
       handleInput ={handleInput}
       handleFilter ={handleFilter}
       setQuery ={setQuery}
-      value = {query}
-      showData = {displayedItems}      
+      query = {query}
+      displayedItems = {displayedItems}      
     />    
   )
 }

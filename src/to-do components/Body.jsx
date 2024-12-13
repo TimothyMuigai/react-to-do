@@ -1,10 +1,7 @@
-import React from 'react'
-
-function Body({setQuery,query, 
-              handleFilter,
-              markDone,deleteTask, 
-              handleInput,userInput,
-              showData,displayData}) 
+function Body({displayedItems, query, setQuery, 
+                handleFilter, handleInput, 
+                handleCheckboxChange, delTask,
+                showInput,inputData}) 
               {
   return (
       <div className="body">
@@ -14,11 +11,11 @@ function Body({setQuery,query,
 
           <div className='list-container'>
               <input type="text"
-                  value={userInput}
+                  value={inputData}
                   onChange={handleInput}
                   placeholder='Add your list'
               />
-              <button onClick={displayData}>Add to list</button>
+              <button onClick={showInput}>Add to list</button>
           </div>
 
           <div className='search-container' >
@@ -40,18 +37,18 @@ function Body({setQuery,query,
 
           <div className="display-container">
             <ul>
-              {showData.map((data, index) => (
+              {displayedItems.map((data, index) => (
                 <li key={index}>
                   <input
                     type="checkbox"
                     checked={data.isChecked}
-                    onChange={() => markDone(index)}
+                    onChange={() => handleCheckboxChange(index)}
                   />
                   <span
                     style={{ textDecoration: data.isChecked ? 'line-through' : 'none' }}>
                     {data.newInput}
                   </span>
-                  <button onClick={() => deleteTask(index)}>Delete</button>
+                  <button onClick={() => delTask(index)}>Delete</button>
                 </li>
               ))}
             </ul>
