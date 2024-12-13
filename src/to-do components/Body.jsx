@@ -17,14 +17,14 @@ function Body({userData, handleInput, markDone, deleteTask, displayData, userInp
               <input type="text" />
               <button>Search</button>
           </div>
-          {/* <div className='filter-container'>
+          <div className='filter-container'>
               <select name="Filter" id="selectBox" defaultValue="default">
                   <option value="default" disabled>Filter Task</option>
                   <option value="no-filter">None</option>
                   <option value="complete">Completed Tasks</option>
                   <option value="inComplete">Yet to be Completed</option>
               </select>
-          </div> */}
+          </div>
           <div className="display-container">
           <ul>
             {userData.map((data, index) => (

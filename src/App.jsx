@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react"
-import Auth from "./components/Auth"
-import { db } from "./config/Config";
-import { getDocs,collection, doc } from "firebase/firestore";
+// import { useEffect, useState } from "react"
+// import Auth from "./components/Auth"
+// import { db } from "./config/Config";
+// import { getDocs,collection, doc } from "firebase/firestore";
 import Functions from "./to-do components/Functions";
 
 function App() {
